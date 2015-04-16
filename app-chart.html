@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{user.email}}
+        <div class="userActivity" ng-show="isActive">
+            <i class="fa fa-circle" style="color: green"></i>
+            (online)
+        </div>
+        <div class="userActivity" ng-show="!isActive">
+            <i class="fa fa-circle" style="color: red"></i>
+            (offline, was active {{activeAgo}})
+        </div>
+        <div class="pull-right">
+            HR: {{hr}} bpm   Stress: {{stress}}
+        </div>
+    </div>
+    <div class="panel-body">
+        <span style="display: inline-block">
+            Heart rate
+        </span>
+        <span  style="display: inline-block; float: right">
+            Stress rate
+        </span>
+
+
+        <linechart data="data" options="options" mode="" width="" height="300" style="width: 100%"></linechart>
+    </div>
+</div>

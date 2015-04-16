@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+
+    <script type="text/javascript">
+        var PUBNUB_demo = PUBNUB.init({
+            publish_key: 'pub-c-8a5790d8-7f4c-4895-84d9-7efe73f310de',
+            subscribe_key: 'sub-c-05de75e4-d22c-11e4-95a3-0619f8945a4f'
+        });
+        setInterval(function() {
+            var userId = ['zRWU5eXHVX', 'UZm1JMQGIA'];
+            PUBNUB_demo.publish({
+                channel: 'real_time',
+                message: {
+                    "userId": 'OdphmzP0mE',
+                    "HR": Math.round(Math.random()*200),
+                    "stress": Math.round(Math.random()*3000),
+                    "time": Date.now()
+                }
+            });
+            PUBNUB_demo.publish({
+                channel: 'real_time',
+                message: {
+                    "userId": 'EzFyxQ089M',
+                    "HR": Math.round(Math.random()*200),
+                    "stress": Math.round(Math.random()*3000),
+                    "time": Date.now()
+                }
+            });
+            PUBNUB_demo.publish({
+                channel: 'real_time',
+                message: {
+                    "userId": 'kYNNa0WGs1',
+                    "HR": Math.round(Math.random()*200),
+                    "stress": Math.round(Math.random()*3000),
+                    "time": Date.now()
+                }
+            });
+        }, 500);
+    </script>
+</body>
+</html>

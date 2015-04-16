@@ -1,0 +1,80 @@
+.header {
+    background-color: #1582DC;
+    position: fixed;
+    width: 100%;
+    padding-top: 0px;
+    min-height: 50px;
+    z-index: 1000;
+    border-radius: 0;
+    border: 0;
+    margin: 0;
+}
+
+#logo {
+    display: inline;
+    max-height: 40px;
+    margin-top: -10px;
+}
+
+#chartList {
+    margin-top: 70px;
+}
+
+.chart {
+    height: 250px;
+    width: 90%;
+    /*text-align: center;*/
+    margin: 0 auto;
+}
+
+.userActivity {
+    display: inline;
+    font-size: 10px;
+}
+
+.domain {
+    stroke-width: 2px;
+}
+
+.tick {
+    font-size: 12px;
+}
+
+.legendText {
+    font-size: 12px;
+}
+
+.group-desc {
+    width: 50%;
+    margin: 0 auto 20px auto;
+}
+
+.group-desc>.panel-heading {
+    text-align: center;
+}
+
+.group-desc>.panel-body {
+    text-align: center;
+}
+
+.gallery-loader {
+    opacity: 1;
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 100%;
+}
+
+.loader {
+    position: absolute;
+    margin: -12px 0 0 -12px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 24px;
+}

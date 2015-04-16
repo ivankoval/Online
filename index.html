@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/angular-chart.css" />
+
+    <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+
+    <script type="text/javascript" src="js/d3.min.js"></script>
+
+    <script type="text/javascript" src="js/line-chart.min.js"></script>
+
+    <script src="js/pubnub-angular.js"></script>
+    <script src="js/mtgox-history.js"></script>
+    <script src="js/app.js"></script>
+
+    <base href="/" />
+</head>
+
+<body ng-app="Online" ng-controller="UsersController as users">
+
+    <header class="header navbar">
+        <div class="brand">
+            <a href="http://www.cardiomood.com" class="navbar-brand">
+                <img id="logo" src="http://www.cardiomood.com/assets/HeartLogo.png" alt="">
+                <span class="heading-font">
+                    <span style="color: #D66C6C;">Cardio</span>
+                    <span style="color: white;">Mood</span>
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <pre-loader></pre-loader>
+
+    <div ng-controller="JoinCtrl"></div>
+
+    <div class="container" ng-controller="ChatCtrl as chat" ng-init="pubnubHist(); subscribe()" >
+        <div id="chartList" class="row">
+            <group-description></group-description>
+            <div class="col-md-6 col-sm-12" ng-repeat="user in $root.groupUsers">
+                <app-chart user="user" chat="chat"></app-chart>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
